@@ -19,10 +19,12 @@ def async_secnews(message):
             news = feedparser.parse(feed)
             for entry in news.entries:
                 try:
+                    # Check that a readable story is in the feed
                     link = entry.link
                 except AttributeError:
-                    link = ""
-                finally:
+                    pass
+                else:
+                    # Do not print stories that have been already printed
                     if not link in LAST_STORIES:
                         try:
                             title = entry.title
