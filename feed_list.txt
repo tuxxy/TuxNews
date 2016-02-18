@@ -1,3 +1,4 @@
 https://threatpost.com/feed/
 http://feeds.arstechnica.com/arstechnica/security
 http://rss.slashdot.org/Slashdot/slashdotMain
+http://mf.feeds.reuters.com/reuters/technologyNews
