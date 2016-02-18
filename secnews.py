@@ -27,29 +27,20 @@ def async_secnews(message):
                     # Do not print stories that have been already printed
                     if not link in LAST_STORIES:
                         try:
-                            title = entry.title
-                            message("Title:     {}".format(title))
+                            message("Title:     {}".format(entry.title))
                             sleep(1)
                         except AttributeError:
-                            title = ""
+                            pass
                         try:
-                            summary = entry.summary
-                            message("Summary:   {}".format(summary))
+                            message("Summary:   {}".format(entry.summary))
                             sleep(1)
                         except AttributeError:
-                            summary = ""
+                            pass
                         try:
-                            author = entry.author
-                            message("Author:    {}".format(author))
+                            message("Published: {}".format(entry.published))
                             sleep(1)
                         except AttributeError:
-                            author = ""
-                        try:
-                            published = entry.published
-                            message("Published: {}".format(published))
-                            sleep(1)
-                        except AttributeError:
-                            published = ""
+                            pass
                         message("{}".format(link))
                         sleep(1)
                         message("-----------------------------------------------------")
