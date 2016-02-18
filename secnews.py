@@ -82,5 +82,3 @@ def secnews(text, message):
         secnews_thread.start()
     elif args[0].lower() == 'stop':
         IS_RUNNING = False
-    elif args[0].lower() == 'debug':
-        message("I'm here - #secnews")
