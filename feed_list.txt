@@ -2,3 +2,8 @@ https://threatpost.com/feed/
 http://feeds.arstechnica.com/arstechnica/security
 http://rss.slashdot.org/Slashdot/slashdotMain
 http://mf.feeds.reuters.com/reuters/technologyNews
+http://www.securityfocus.com/rss/vulnerabilities.xml
+http://www.securityfocus.com/rss/news.xml
+http://krebsonsecurity.com/feed/
+http://www.theregister.co.uk/security/headlines.atom
+http://www.networkworld.com/category/security/index.rss
