@@ -14,7 +14,6 @@ LAST_STORIES = []   # Links to last stories printed
 IS_RUNNING = False  # Boolean switch to kill secnews thread
 
 def async_secnews(message):
-    global LAST_STORIES
     while(IS_RUNNING):
         for feed in FEED_LIST:
             news = feedparser.parse(feed)
@@ -74,7 +73,7 @@ def load_feeds(bot):
 @hook.command(permissions=['botcontrol'])
 def secnews(text, message):
     """<add|del> <feed> -- Add/Delete a feed from the feed_list."""
-    global FEED_LIST, IS_RUNNING
+    global IS_RUNNING
     args = text.strip().split()
     if args[0].lower() == 'add':
         FEED_LIST.append(args[1])
