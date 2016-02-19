@@ -13,5 +13,3 @@ To use this on your own network, follow the instructions below:
 You should immediately see a stream of rss feeds being output into the channel.
 
 To stop it, type `.secnews stop`
-
-If you want to test if the secnews plugin is working, type `.secnews debug`
