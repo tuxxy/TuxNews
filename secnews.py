@@ -11,9 +11,9 @@ SLEEP_TIME = 300 # Time to sleep before pulling feeds, in secs
 FEED_LIST = []  # List of feeds to parse from feed_list.txt
 LAST_STORIES = []   # Links to last stories printed
 
-IS_RUNNING = False  # Boolean switch to kill secnews thread
+IS_RUNNING = False  # Boolean switch to kill tuxnews thread
 
-def async_secnews(message):
+def async_tuxnews(message):
     while(IS_RUNNING):
         for feed in FEED_LIST:
             news = feedparser.parse(feed)
@@ -64,7 +64,7 @@ def load_feeds(bot):
 
 @asyncio.coroutine
 @hook.command(permissions=['botcontrol'])
-def secnews(text, message):
+def tuxnews(text, message):
     """<add|del> <feed> -- Add/Delete a feed from the feed_list."""
     global IS_RUNNING
     args = text.strip().split()
@@ -78,8 +78,8 @@ def secnews(text, message):
         except ValueError:
             message("'{}' was not found in the feed list.".format(args[1]))
     elif args[0].lower() == 'start':
-        secnews_thread = threading.Thread(None, async_secnews, args=[message])
+        tuxnews_thread = threading.Thread(None, async_tuxnews, args=[message])
         IS_RUNNING = True
-        secnews_thread.start()
+        tuxnews_thread.start()
     elif args[0].lower() == 'stop':
         IS_RUNNING = False
