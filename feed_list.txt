@@ -7,3 +7,9 @@ http://www.securityfocus.com/rss/news.xml
 http://krebsonsecurity.com/feed/
 http://www.theregister.co.uk/security/headlines.atom
 http://www.networkworld.com/category/security/index.rss
+http://feeds.reuters.com/Reuters/worldNews
+http://feeds.reuters.com/reuters/environment
+http://feeds.reuters.com/Reuters/PoliticsNews
+http://feeds.abcnews.com/abcnews/internationalheadlines
+http://america.aljazeera.com/content/ajam/articles.rss
+http://www.freelists.org/feed/cryptome
