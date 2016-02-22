@@ -74,6 +74,7 @@ def secnews(text, message):
     elif args[0].lower() == 'del':
         try:
             FEED_LIST.remove(args[1])
+            message("'{}' removed from the feel list.".format(args[1]))
         except ValueError:
             message("'{}' was not found in the feed list.".format(args[1]))
     elif args[0].lower() == 'start':
