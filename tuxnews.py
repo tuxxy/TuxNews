@@ -20,7 +20,7 @@ LAST_STORIES = []   # Links to last stories printed
 
 IS_RUNNING = False  # Boolean switch to kill tuxnews thread
 
-def async_tuxnews(message):
+def async_tuxnews(message, chan):
     while(IS_RUNNING):
         for feed in FEED_LIST:
             news = feedparser.parse(feed)
@@ -73,7 +73,7 @@ def load_feeds(bot):
 
 @asyncio.coroutine
 @hook.command(permissions=['botcontrol'])
-def tuxnews(text, message):
+def tuxnews(text, message, chan):
     """<add|del> <feed> -- Add/Delete a feed from the feed_list."""
     global IS_RUNNING
     args = text.strip().split()
@@ -87,7 +87,8 @@ def tuxnews(text, message):
         except ValueError:
             message("'{}' was not found in the feed list.".format(args[1]))
     elif args[0].lower() == 'start':
-        tuxnews_thread = threading.Thread(None, async_tuxnews, args=[message])
+        tuxnews_thread = threading.Thread(None, async_tuxnews, args=[message,\
+                chan])
         IS_RUNNING = True
         tuxnews_thread.start()
     elif args[0].lower() == 'stop':
