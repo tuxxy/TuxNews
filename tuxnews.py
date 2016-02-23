@@ -52,13 +52,14 @@ def async_tuxnews(message, chan):
                             pass
                         message("{}".format(link))
                         sleep(1)
-                        message("-----------------------------------------------------")
+                        message("----------------------------------------------\
+                                ---------")
                         sleep(1)
                         LAST_STORIES.append(link)
                         # Prevent LAST_STORIES from getting too full...
                         if len(LAST_STORIES) >= 2600:
                             LAST_STORIES.pop(0)
-                    # Check for kill signal to prevent spam and end if received
+                    # Check for kill signal to prevent spam
                     if not IS_RUNNING:
                         return 
         sleep(SLEEP_TIME)
