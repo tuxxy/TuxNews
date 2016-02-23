@@ -34,11 +34,11 @@ def async_tuxnews(message, chan):
                     # Do not print stories that have been already printed
                     if not link in LAST_STORIES:
                         try:
-                            message("Title:     {}".format(entry.title))
+                            message("Title:     \x02{}".format(entry.title))
                             sleep(1)
                         except AttributeError:
                             pass
-                        message("{}".format(link))
+                        message("\x1f{}".format(link))
                         sleep(1)
                         try:
                             summary = html.fromstring(entry.summary)\
