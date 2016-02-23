@@ -7,6 +7,8 @@ from time import sleep
 from cloudbot import hook
 from cloudbot.util import web, formatting
 
+from lxml import html
+
 SLEEP_TIME = 300 # Time to sleep before pulling feeds, in secs
 FEED_LIST = []  # List of feeds to parse from feed_list.txt
 LAST_STORIES = []   # Links to last stories printed
@@ -32,7 +34,9 @@ def async_tuxnews(message):
                         except AttributeError:
                             pass
                         try:
-                            message("Summary:   {}".format(entry.summary))
+                            summary = html.fromstring(entry.summary)\
+                                    .text_content()
+                            message("Summary:   {}".format(summary))
                             sleep(1)
                         except AttributeError:
                             pass
