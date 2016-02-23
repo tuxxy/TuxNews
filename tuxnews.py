@@ -90,10 +90,12 @@ def tuxnews(text, message, chan):
                     .format(args[1]))
     elif args[0].lower() == 'del':
         try:
-            FEED_LIST.remove(args[1])
-            message("'{}' removed from the feel list.".format(args[1]))
+            FEED_LIST[chan[1:]].remove(args[1])
+            message("'{}' removed from the feed list for this channel."\
+                    .format(args[1]))
         except ValueError:
-            message("'{}' was not found in the feed list.".format(args[1]))
+            message("'{}' was not found in the feed list for this channel."\
+                    .format(args[1]))
     elif args[0].lower() == 'start':
         if chan[1:] in FEED_LIST:
             tuxnews_thread = threading.Thread(None, async_tuxnews,\
