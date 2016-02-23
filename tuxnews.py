@@ -52,8 +52,8 @@ def async_tuxnews(message, chan):
                             pass
                         message("{}".format(link))
                         sleep(1)
-                        message("----------------------------------------------\
-                                ---------")
+                        message("---------------------------------------------"\
+                                "----------")
                         sleep(1)
                         LAST_STORIES.append(link)
                         # Prevent LAST_STORIES from getting too full...
