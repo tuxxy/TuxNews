@@ -74,7 +74,7 @@ def load_feeds(bot):
 
 @asyncio.coroutine
 @hook.command(permissions=['botcontrol'])
-def tuxnews(text, message, chan):
+def tuxnews(text, message, chan, bot):
     """<start|(add|del> <feed>) -- Add/Delete a feed from the feed_list."""
     global IS_RUNNING
     args = text.strip().split()
@@ -106,3 +106,5 @@ def tuxnews(text, message, chan):
             message("No default feeds found for this channel.")
     elif args[0].lower() == 'stop':
         IS_RUNNING = False
+    elif args[0].lower() == 'reload':
+        load_feeds(bot)
