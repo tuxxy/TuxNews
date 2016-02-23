@@ -8,6 +8,11 @@ from cloudbot import hook
 from cloudbot.util import web, formatting
 
 from lxml import html
+from yaml import load
+try:
+    from yaml import CLoader as Loader
+except ImportError:
+    from yaml import Loader
 
 SLEEP_TIME = 300 # Time to sleep before pulling feeds, in secs
 FEED_LIST = []  # List of feeds to parse from feed_list.txt
