@@ -38,6 +38,8 @@ def async_tuxnews(message, chan):
                             sleep(1)
                         except AttributeError:
                             pass
+                        message("{}".format(link))
+                        sleep(1)
                         try:
                             summary = html.fromstring(entry.summary)\
                                     .text_content()
@@ -45,8 +47,6 @@ def async_tuxnews(message, chan):
                             sleep(1)
                         except AttributeError:
                             pass
-                        message("{}".format(link))
-                        sleep(1)
                         message("---------------------------------------------"\
                                 "----------")
                         sleep(1)
