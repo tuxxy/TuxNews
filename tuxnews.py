@@ -88,9 +88,12 @@ def tuxnews(text, message, chan):
         except ValueError:
             message("'{}' was not found in the feed list.".format(args[1]))
     elif args[0].lower() == 'start':
-        tuxnews_thread = threading.Thread(None, async_tuxnews, args=[message,\
-                chan])
-        IS_RUNNING = True
-        tuxnews_thread.start()
+        if chan[1:] in FEED_LIST:
+            tuxnews_thread = threading.Thread(None, async_tuxnews,\
+                    args=[message, chan])
+            IS_RUNNING = True
+            tuxnews_thread.start()
+        else:
+            message("No default feeds found for this channel.")
     elif args[0].lower() == 'stop':
         IS_RUNNING = False
