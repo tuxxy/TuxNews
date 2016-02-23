@@ -22,7 +22,7 @@ IS_RUNNING = False  # Boolean switch to kill tuxnews thread
 
 def async_tuxnews(message, chan):
     while(IS_RUNNING):
-        for feed in FEED_LIST:
+        for feed in FEED_LIST[chan[1:]]:
             news = feedparser.parse(feed)
             for entry in news.entries:
                 try:
