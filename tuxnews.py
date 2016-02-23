@@ -45,11 +45,6 @@ def async_tuxnews(message, chan):
                             sleep(1)
                         except AttributeError:
                             pass
-                        try:
-                            message("Published: {}".format(entry.published))
-                            sleep(1)
-                        except AttributeError:
-                            pass
                         message("{}".format(link))
                         sleep(1)
                         message("---------------------------------------------"\
