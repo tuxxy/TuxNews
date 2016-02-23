@@ -75,7 +75,7 @@ def load_feeds(bot):
 @asyncio.coroutine
 @hook.command(permissions=['botcontrol'])
 def tuxnews(text, message, chan):
-    """<add|del> <feed> -- Add/Delete a feed from the feed_list."""
+    """<start|(add|del> <feed>) -- Add/Delete a feed from the feed_list."""
     global IS_RUNNING
     args = text.strip().split()
     if args[0].lower() == 'add':
