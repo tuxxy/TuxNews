@@ -79,8 +79,15 @@ def tuxnews(text, message, chan):
     global IS_RUNNING
     args = text.strip().split()
     if args[0].lower() == 'add':
-        FEED_LIST.append(args[1])
-        message("'{}' added to the feed list.".format(args[1]))
+        if not chan[1:] in FEED_LIST:
+            FEED_LIST[chan[1:]] = []
+        if not args[1] in FEED_LIST[chan[1:]]:
+            FEED_LIST[chan[1:]].append(args[1])
+            message("'{}' added to the feed list for this channel."\
+                    .format(args[1]))
+        else:
+            message("'{}' already in the feed list for this channel."\
+                    .format(args[1]))
     elif args[0].lower() == 'del':
         try:
             FEED_LIST.remove(args[1])
