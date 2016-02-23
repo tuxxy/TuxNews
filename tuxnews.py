@@ -15,7 +15,7 @@ except ImportError:
     from yaml import Loader
 
 SLEEP_TIME = 300 # Time to sleep before pulling feeds, in secs
-FEED_LIST = []  # List of feeds to parse from feed_list.txt
+FEED_LIST = {}  # List of feeds to parse from feed_list.yml
 LAST_STORIES = []   # Links to last stories printed
 
 IS_RUNNING = False  # Boolean switch to kill tuxnews thread
