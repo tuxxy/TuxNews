@@ -67,8 +67,8 @@ def async_tuxnews(message):
 @hook.on_start()
 def load_feeds(bot):
     global FEED_LIST
-    with open(os.path.join(bot.data_dir, 'feed_list.txt')) as f:
-        FEED_LIST = f.readlines()
+    with open(os.path.join(bot.data_dir, 'feed_list.yml')) as f:
+        FEED_LIST = load(f, Loader=Loader)
 
 
 @asyncio.coroutine
