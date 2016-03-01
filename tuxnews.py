@@ -65,7 +65,7 @@ def async_tuxnews(message, chan):
 def shorten_link(url):
     payload = json.dumps({'url': url})
     headers = {'content-type': 'application/json'}
-    response = requests.post('http://tux.sh/l', data=payload, headers=headers)
+    response = requests.post('https://tux.sh/l/', data=payload, headers=headers)
     return response.json()['url']
 
 @hook.on_start()
