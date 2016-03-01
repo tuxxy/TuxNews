@@ -2,6 +2,7 @@ import feedparser
 import os
 import asyncio
 import threading
+import requests
 from time import sleep
 
 from cloudbot import hook
@@ -27,7 +28,7 @@ def async_tuxnews(message, chan):
             for entry in news.entries:
                 try:
                     # Check that a readable story is in the feed
-                    link = entry.link
+                    link = shorten_link(entry.link)
                 except AttributeError:
                     pass
                 else:
@@ -59,6 +60,12 @@ def async_tuxnews(message, chan):
                         return 
         sleep(SLEEP_TIME)
             
+
+def shorten_link(url):
+    payload = json.dumps({'url': url})
+    headers = {'content-type': 'application/json'}
+    response = requests.post('http://tux.sh/l', data=payload, headers=headers)
+    return response.json()['url']
 
 @hook.on_start()
 def load_feeds(bot):
