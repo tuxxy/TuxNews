@@ -66,7 +66,7 @@ def shorten_link(url):
     payload = json.dumps({'url': url})
     headers = {'content-type': 'application/json'}
     response = requests.post('https://tux.sh/l/', data=payload, headers=headers)
-    return response.json()['url']
+    return response.json()['URL']
 
 @hook.on_start()
 def load_feeds(bot):
