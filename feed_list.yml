@@ -7,8 +7,6 @@ secnews:
     - http://www.securityfocus.com/rss/news.xml
     - http://krebsonsecurity.com/feed/
     - http://www.theregister.co.uk/security/headlines.atom
-    - http://www.networkworld.com/category/security/index.rss
-    - http://www.freelists.org/feed/cryptome
 worldnews:
     - http://feeds.reuters.com/Reuters/worldNews
     - http://feeds.reuters.com/reuters/environment
