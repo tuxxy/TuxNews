@@ -13,3 +13,5 @@ bot:
         user: "TuxNews"
         serv_name: "nickserv"
         serv_command: "IDENTIFY"
+admins:
+    - "YourNick"
