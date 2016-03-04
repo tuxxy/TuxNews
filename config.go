@@ -6,11 +6,12 @@ import (
 )
 
 type BotConfig struct {
-    Server      string  `yaml:"server"`
-    Port        string  `yaml:"port"`
-    SSL         bool    `yaml:"ssl"`
-    IgnoreCert  bool    `yaml:"ignore_cert"`
-    Channels    []string   `yaml:"channels,flow"`
+    Server      string      `yaml:"server"`
+    Port        string      `yaml:"port"`
+    SSL         bool        `yaml:"ssl"`
+    IgnoreCert  bool        `yaml:"ignore_cert"`
+    Channels    []string    `yaml:"channels,flow"`
+    admins      []string    `yaml:"admins,flow"`
     Bot struct {
         Nick        string  `yaml:"nick"`
         User        string  `yaml:"user"`
