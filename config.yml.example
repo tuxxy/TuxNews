@@ -1,0 +1,15 @@
+server: "irc.2600.net"
+port: '6697'
+ssl: true
+ignore_cert: true
+channels:
+    - "#TuxNewsTesting"
+bot:
+    nick: "TuxNews"
+    user: "TuxNews"
+    nickserv:
+        enabled: true
+        pass: "MyNickservPassword"
+        user: "TuxNews"
+        serv_name: "nickserv"
+        serv_command: "IDENTIFY"
